@@ -40,9 +40,11 @@ namespace EstudoDDDTDD.Helpers
 
         public static string AjustarTexto(string valor, int tamanho)
         {
+            if (valor == null) return string.Empty;
+
             if (valor.Length > tamanho)
             {
-                valor = valor.Substring(1, tamanho);
+                valor = valor.Substring(0, tamanho);
             }
             return valor;
         }
@@ -59,6 +61,8 @@ namespace EstudoDDDTDD.Helpers
 
         public static string ToTitleCase(string texto, bool manterOqueJaEstiverMaiusculo)
         {
+            if (texto == null) return string.Empty;
+
             texto = texto.Trim();
 
             if (!manterOqueJaEstiverMaiusculo)
